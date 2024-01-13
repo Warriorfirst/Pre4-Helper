@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "Pre4Helper1.0",
+        "name": "Pre4Helper",
+        "description": "Mod to make pre4 easier",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/Warriorfirst/Pre4-Helper",
+        "updateUrl": "",
+        "authorList": ["Warriorfirst", "BabyGetSwekt"],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
