@@ -39,7 +39,7 @@ public class Pre4Config extends Vigilant {
 
 
 
-    public static pre4Config INSTANCE = new Pre4Config();
+    public static Pre4Config INSTANCE = new Pre4Config();
 
 
 

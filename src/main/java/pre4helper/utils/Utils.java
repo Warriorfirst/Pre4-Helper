@@ -40,12 +40,24 @@ public class Utils {
     private static final Minecraft mc = Minecraft.getMinecraft();
 
 
+
     /**
      * Taken from Danker's Skyblock Mod under GPL 3.0 license
      * https://github.com/bowser0000/SkyblockMod/blob/master/LICENSE
      * @author bowser0000
      */
+    public static String[] getListOfPlayerUsernames() {
+        final Collection<NetworkPlayerInfo> players = Utils.GetMC().getNetHandler().getPlayerInfoMap();
+        final List<String> list = new ArrayList<>();
+        for (final NetworkPlayerInfo info : players) {
+            if(!info.getGameProfile().getName().contains("!")) list.add(info.getGameProfile().getName());
+        }
+        return list.toArray(new String[0]);
+    }
 
+    public static Minecraft GetMC() {
+        return mc;
+    }
     public static void setTimeout(Runnable code, int ms) {
         setTimeout(code,ms,false);
     }

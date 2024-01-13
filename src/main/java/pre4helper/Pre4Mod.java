@@ -33,7 +33,7 @@ public class Pre4Mod {
     @Mod.Instance(MODID)
     public static Pre4Mod instance;
 
-    private Pre4Mod pre4Mod;
+    private Pre4Config pre4config;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -64,7 +64,7 @@ public class Pre4Mod {
     public void postInit(FMLPostInitializationEvent event) {
         ClientCommandHandler commandHandler = ClientCommandHandler.instance;
         List<ICommand> commands = new ArrayList<>();
-        commands.add(new GoblinCommand());
+        commands.add(new Pre4HelperCommands());
 
         for (ICommand command : commands) {
             if (!commandHandler.getCommands().containsValue(command)) {
