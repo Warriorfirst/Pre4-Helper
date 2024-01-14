@@ -21,25 +21,29 @@ public class Pre4Config extends Vigilant {
 
 
     @Property(
-            type = PropertyType.SWITCH, name = "Bonzo Timer",
-            description = "Bonzo Mask timer to help with pre 4 in M7 and F7",
-            category = "Dungeon", subcategory = "Miscellaneous",
-        searchTags = {"helper", "pre4"}
+            type = PropertyType.SLIDER, name = "Bonzo Timer",
+            description = "Change the timer (in ms). Standard is 2600ms",
+            category = "Dungeon", subcategory = "Pre4 Helper",
+            searchTags = {"helper", "pre4"},
+            min = 2500,
+            max = 2950
     )
-    public static boolean bonzoTimer = false;
+    public static int bonzoTimer = 2600;
 
     @Property(
-            type = PropertyType.SWITCH, name = "Phoenix Timer",
-            description = "Phoenix Pet timer to help with pre 4 in M7 and F7",
-            category = "Dungeon", subcategory = "Miscellanous",
-            searchTags = {"helper", "pre4"}
+            type = PropertyType.SLIDER, name = "Phoenix Timer",
+            description = "Change the timer (in ms). Standard is 3600ms",
+            category = "Dungeon", subcategory = "Pre4 Helper",
+            searchTags = {"helper", "pre4"},
+            min = 3500,
+            max = 3950
     )
-    public static boolean phoenixTimer = false;
+    public static int phoenixTimer = 3600;
 
 
 
 
-    public static pre4Config INSTANCE = new Pre4Config();
+    public static Pre4Config INSTANCE = new Pre4Config();
 
 
 

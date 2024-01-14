@@ -36,7 +36,7 @@ public class Pre4HelperCommands extends CommandBase {
 
     @Override
     public List<String> getCommandAliases() {
-        return Lists.newArrayList("pre4","warrior","pre4helper");
+        return Lists.newArrayList("pre4","warrior","pre4helper", "/p4", "/wa");
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Pre4HelperCommands extends CommandBase {
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
         EntityPlayerSP player = (EntityPlayerSP) sender;
         if (args.length == 0) {
-            GuiUtil.open(Objects.requireNonNull(GoblinConfig.INSTANCE.gui()));
+            GuiUtil.open(Objects.requireNonNull(Pre4Config.INSTANCE.gui()));
         }
 
 

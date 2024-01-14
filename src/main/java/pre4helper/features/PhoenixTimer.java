@@ -1,13 +1,13 @@
-package pre4mod.features;
+package pre4helper.features;
 
-import pre4mod.config.Pre4Config;
-import pre4mod.utils.Utils;
+import pre4helper.config.Pre4Config;
+import pre4helper.utils.Utils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-
+import static pre4helper.utils.Utils.drawTitle;
 
 public class PhoenixTimer{
 
@@ -15,9 +15,10 @@ public class PhoenixTimer{
     public void onChat(ClientChatReceivedEvent event) {
         String message = event.message.getUnformattedText();
         
-        if(GoblinConfig.phoenixTimer && message.contains("Your Phoenix Pet saved you from certain death!")) {
+        if(message.contains("Your Phoenix Pet saved you from certain death!")) {
+            int timer = Pre4Config.phoenixTimer;
             drawTitle("", null, 20);
-            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Leap now!", null, 0, 20, 0), 3750);
+            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Leap now!", null, 0, 20, 0), timer);
         }
 
     }

@@ -14,30 +14,18 @@
 
 package pre4helper.utils;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
-import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import com.google.gson.JsonObject;
-import com.mojang.realmsclient.gui.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetworkPlayerInfo;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.scoreboard.ScoreObjective;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.IChatComponent;
 
 public class Utils {
 
     private static final Minecraft mc = Minecraft.getMinecraft();
+
 
 
     /**
@@ -45,7 +33,18 @@ public class Utils {
      * https://github.com/bowser0000/SkyblockMod/blob/master/LICENSE
      * @author bowser0000
      */
+    public static String[] getListOfPlayerUsernames() {
+        final Collection<NetworkPlayerInfo> players = Utils.GetMC().getNetHandler().getPlayerInfoMap();
+        final List<String> list = new ArrayList<>();
+        for (final NetworkPlayerInfo info : players) {
+            if(!info.getGameProfile().getName().contains("!")) list.add(info.getGameProfile().getName());
+        }
+        return list.toArray(new String[0]);
+    }
 
+    public static Minecraft GetMC() {
+        return mc;
+    }
     public static void setTimeout(Runnable code, int ms) {
         setTimeout(code,ms,false);
     }
