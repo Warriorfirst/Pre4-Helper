@@ -15,10 +15,9 @@ public class PhoenixTimer{
     public void onChat(ClientChatReceivedEvent event) {
         String message = event.message.getUnformattedText();
         
-        if(message.contains("Your Phoenix Pet saved you from certain death!")) {
-            int timer = Pre4Config.phoenixTimer;
+        if(Pre4Config.phoenixTimer && message.contains("Your Phoenix Pet saved you from certain death!")) {
             drawTitle("", null, 20);
-            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Leap now!", null, 0, 20, 0), timer);
+            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Leap now!", null, 0, 20, 0), 3750);
         }
 
     }
