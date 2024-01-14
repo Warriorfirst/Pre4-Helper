@@ -36,7 +36,7 @@ public class Pre4HelperCommands extends CommandBase {
 
     @Override
     public List<String> getCommandAliases() {
-        return Lists.newArrayList("pre4","warrior","pre4helper");
+        return Lists.newArrayList("pre4","warrior","pre4helper", "/p4");
     }
 
     @Override
