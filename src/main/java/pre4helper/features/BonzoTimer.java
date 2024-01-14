@@ -25,9 +25,9 @@ public class BonzoTimer{
     public void onChat(ClientChatReceivedEvent event) {
         String message = event.message.getUnformattedText();
 
-        if(Pre4Config.bonzoTimer && message.contains("Your ⚚ Bonzo's Mask saved your life!") || message.contains("Your Bonzo's Mask saved your life!")) {
+        if(message.contains("Your ⚚ Bonzo's Mask saved your life!") || message.contains("Your Bonzo's Mask saved your life!")) {
             drawTitle("", null, 20);
-            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Rod now!", null, 0, 20, 0), 2500);
+            Utils.setTimeout(() -> Minecraft.getMinecraft().ingameGUI.displayTitle("Rod now!", null, 0, 20, 0), Pre4Config.bonzoTimer);
         }
 
     }
